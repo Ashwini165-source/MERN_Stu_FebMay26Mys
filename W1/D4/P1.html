@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    <style>
+
+        .Flex-Container{
+            display: flex;
+            background-color: bisque;
+            /*space-around/ flex-start /flex-end / center /space-between/ space-evenly*/
+            /*justify-content: space-evenly; */
+            /*vertical alignment: center/ flex-start/ flex-end/ baseline*/
+            align-items: baseline;
+            height: 100px;
+            flex-direction:column-reverse; /*row-reverse /column /column-reverse */
+            flex-wrap: wrap-reverse; /*wrap/ nowrap/ wrap-reverse */
+        }
+        .Flex-Item{
+            background-color: cornsilk;
+            margin: 10px;
+            padding: 20px;
+            width: 100px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Display: flex</h1>
+    <div class="Flex-Container">
+        <div class="Flex-Item"> Content 1</div>
+        <div class="Flex-Item"> Content 2</div>
+        <div class="Flex-Item"> Content 3</div>
+    </div>
+    
+</body>
+</html>
