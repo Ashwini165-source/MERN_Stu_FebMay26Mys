@@ -1,328 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashwini B V | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwini B V | Portfolio</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-body{
-    background:#f8f9fa;
-    color:#333;
-    line-height:1.6;
-}
-header{
-    background:#111;
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+        body {
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:1200px;
-    margin:auto;
-    padding:15px 20px;
-}
+        header {
+            background: #111;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    text-decoration:none;
-    color:white;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+        }
 
-.nav-links{
-    list-style:none;
-    display:flex;
-    gap:20px;
-}
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
 
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-.nav-links a:hover{
-    color:#00adb5;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
 
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(135deg,#00adb5,#393e46);
-    color:white;
-    padding:20px;
-}
+        .nav-links a:hover {
+            color: #00adb5;
+        }
 
-.hero h1{
-    font-size:40px;
-}
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #00adb5, #393e46);
+            color: white;
+            padding: 20px;
+        }
 
-.profile-image{
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    margin:20px 0;
-    border:4px solid white;
-}
+        .hero h1 {
+            font-size: 40px;
+        }
 
-.cta-button{
-    display:inline-block;
-    margin-top:20px;
-    padding:10px 25px;
-    background:white;
-    color:#00adb5;
-    text-decoration:none;
-    border-radius:25px;
-    font-weight:bold;
-    transition:0.3s;
-}
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 20px 0;
+            border: 4px solid white;
+        }
 
-.cta-button:hover{
-    background:#222;
-    color:white;
-}
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: white;
+            color: #00adb5;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-section{
-    padding:60px 20px;
-    max-width:1100px;
-    margin:auto;
-}
+        .cta-button:hover {
+            background: #222;
+            color: white;
+        }
 
-section h2, section h3{
-    text-align:center;
-    margin-bottom:30px;
-}
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-.about{
-    text-align:center;
-}
+        section h2,
+        section h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-.tags{
-    margin-top:15px;
-}
+        .about {
+            text-align: center;
+        }
 
-.tag{
-    display:inline-block;
-    background:#00adb5;
-    color:white;
-    padding:5px 12px;
-    border-radius:20px;
-    margin:5px;
-    font-size:14px;
-}
+        .tags {
+            margin-top: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #00adb5;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
 
 
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-.skill-card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-    text-align:center;
-}
+        .skill-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
 
-.skill-card:hover{
-    transform:translateY(-5px);
-}
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
 
-.projects-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-.project-content{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+        .project-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
 
-.project-content:hover{
-    transform:scale(1.03);
-}
+        .project-content:hover {
+            transform: scale(1.03);
+        }
 
-.project-content a{
-    display:inline-block;
-    margin-top:10px;
-    text-decoration:none;
-    color:#00adb5;
-    font-weight:bold;
-}
+        .project-content a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #00adb5;
+            font-weight: bold;
+        }
 
-table{
-    width:100%;
-    margin-top:40px;
-    border-collapse:collapse;
-}
+        table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+        }
 
-th, td{
-    padding:12px;
-    border:1px solid #ddd;
-    text-align:center;
-}
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
 
-th{
-    background:#00adb5;
-    color:white;
-}
+        th {
+            background: #00adb5;
+            color: white;
+        }
 
-.contact-form{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-input, select, textarea{
-    width:100%;
-    padding:10px;
-    margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.submit-btn{
-    background:#00adb5;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-    transition:0.3s;
-}
+        .submit-btn {
+            background: #00adb5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.submit-btn:hover{
-    background:#222;
-}
+        .submit-btn:hover {
+            background: #222;
+        }
 
-@media(max-width:768px){
-    .hero h1{
-        font-size:28px;
-    }
-    nav{
-        flex-direction:column;
-        gap:10px;
-    }
-}
-</style>
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<nav>
-<a href="#" class="logo">Ashwini B V</a>
-<ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</header>
+    <header>
+        <nav>
+            <a href="#" class="logo">Ashwini B V</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="home" class="hero">
-<h1>Ashwini B V</h1>
-<img src="myphoto.jpg" alt="Profile Photo" class="profile-image">
-<p>Software Developer | MERN Stack | DevOps</p>
-<a href="#contact" class="cta-button">Contact Me</a>
-</section>
+    <section id="home" class="hero">
+        <h1>Ashwini B V</h1>
+        <img src="myphoto.jpg" alt="Profile Photo" class="profile-image">
+        <p>Software Developer | MERN Stack | DevOps</p>
+        <a href="#contact" class="cta-button">Contact Me</a>
+    </section>
 
-<section id="about">
-<h2>About Me</h2>
-<div class="about">
-<p>Full Stack Developer experienced in Web Development and Cloud Hosting. 
-Specialized in Finance-domain applications and scalable backend systems.</p>
-<div class="tags">
-<span class="tag">Node.js</span>
-<span class="tag">MongoDB</span>
-<span class="tag">AWS</span>
-<span class="tag">Redis</span>
-</div>
-</div>
-</section>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about">
+            <p>Full Stack Developer experienced in Web Development and Cloud Hosting.
+                Specialized in Finance-domain applications and scalable backend systems.</p>
+            <div class="tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Redis</span>
+            </div>
+        </div>
+    </section>
 
-<section id="skills">
-<h2>Skills</h2>
-<div class="skills-grid">
-<div class="skill-card">
-<h4>MERN Stack</h4>
-<p>ReactJS, NodeJS, ExpressJS, MongoDB</p>
-</div>
-<div class="skill-card">
-<h4>DevOps</h4>
-<p>AWS, Docker, CI/CD</p>
-</div>
-</div>
-</section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>MERN Stack</h4>
+                <p>ReactJS, NodeJS, ExpressJS, MongoDB</p>
+            </div>
+            <div class="skill-card">
+                <h4>DevOps</h4>
+                <p>AWS, Docker, CI/CD</p>
+            </div>
+        </div>
+    </section>
 
-<section id="projects">
-<h2>My Projects</h2>
-<div class="projects-container">
-<div class="project-content">
-<h4>Gola</h4>
-<p>Fast and hassle-free cab booking platform.</p>
-<a href="#">View Project</a>
-</div>
-</div>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-content">
+                <h4>Gola</h4>
+                <p>Fast and hassle-free cab booking platform.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
 
-<table>
-<thead>
-<tr>
-<th>Project</th>
-<th>Technology 1</th>
-<th>Technology 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AWS Hosting</td>
-<td>MERN</td>
-<td>Redis</td>
-</tr>
-</tbody>
-</table>
-</section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Technology 1</th>
+                    <th>Technology 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AWS Hosting</td>
+                    <td>MERN</td>
+                    <td>Redis</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-<section id="contact">
-<h2>Contact Me</h2>
-<form class="contact-form">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<select>
-<option>FTE Opportunity</option>
-<option>Consultant</option>
-</select>
-<textarea rows="4" placeholder="Your Message"></textarea>
-<button type="submit" class="submit-btn">Send Message</button>
-</form>
-</section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <select>
+                <option>FTE Opportunity</option>
+                <option>Consultant</option>
+            </select>
+            <textarea rows="4" placeholder="Your Message"></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
 
 </body>
+
 </html>
