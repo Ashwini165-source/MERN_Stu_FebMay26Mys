@@ -11,23 +11,40 @@
 <body>
     <main class="max-w-4xl mx-auto p-6 space-y-8">
         <!-- <section class="border rounded p-6 space-y-4">
-            <div class="flex justify-between items-center">
-                <button id="prev" class="px-3 py-2 rounded border hover:bg-blue-200 transition">Previous</button>
-                <button id="next" class="px-3 py-2 rounded border hover:bg-blue-200 transition">Next</button>
-            </div>
-        </section> -->
-        <section class="border rounded p-6 space-y-4">
+
             <div class="overflow-hidden rounded border">
-                <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
-                    <div class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-red-100 font-bold">
+                <div  class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
+                    <div class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-red-500 font-bold">
                         Slide 1
                     </div>
                     <div
-                        class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-yellow-100 font-bold">
+                        class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-yellow-500 font-bold">
                         Slide 2
                     </div>
                     <div
                         class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-green-500 font-bold">
+                        Slide 3
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <button id="prev" class="px-3 py-2 rounded border hover:bg-blue-200 transition">Previous</button>
+                    <button id="next" class="px-3 py-2 rounded border hover:bg-blue-200 transition">Next</button>
+                </div>
+            </div>
+        </section> -->
+        
+     <section class="border rounded p-6 space-y-4">
+            <div class="overflow-hidden rounded border">
+                <div id="track" class="flex transition-transform duration-300 ease-outoverflow-x-auto snap-x snap-mandatory scroll-smooth">
+                    <div class="w-full shrink-0 h-52  flex items-center justify-center bg-red-100 font-bold">
+                        Slide 1
+                    </div>
+                    <div
+                        class="w-full shrink-0 h-52  flex items-center justify-center bg-yellow-100 font-bold">
+                        Slide 2
+                    </div>
+                    <div
+                        class="w-full shrink-0 h-52  flex items-center justify-center bg-green-100 font-bold">
                         Slide 3
                     </div>
                 </div>
@@ -42,20 +59,20 @@
         const track = document.getElementById('track');
         const prevBtn = document.getElementById('prev');
         const nextBtn = document.getElementById('next');
-        let index=0;
-        const total=3;
+        let index =0;
+        const total = 3; // total number of slides
         function update(){
-            track.style.transform=`translateX(-${index*100}%)`;            
+            track.style.transform = `translateX(-${index * 100}%)`;
         }
-        prevBtn.addEventListener('click',()=>{
-            index=(index-1+total)%total;
+        prevBtn.addEventListener('click',() => {
+            index = (index - 1 + total) % total;
             update();
         });
-        nextBtn.addEventListener('click',()=>{
-            index=(index+1+total)%total;
+        nextBtn.addEventListener('click',() => {
+            index = (index + 1 + total) % total;
             update();
         });
-        update();
     </script>
 </body>
+
 </html>
