@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variables var,let,const</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <pre id="out">
+    </pre>
+     <button id="runBtn" class="px-3 py-1 rounded mt-2 mb-2 bg-black text-white">Run</button>
+    <script>
+        const out = document.getElementById("out");
+
+        function print(...args){
+        // console
+        console.log(...args);
+        out.textContent+=args.join("")+"\n";   
+    }
+
+        function clearOut(){
+            out.textContent = "";
+        }
+
+        function run(){
+            clearOut();
+            if(true){
+                var x = "var escapes the if-block";
+            }
+            print("X = ",x);
+            // Let:scope
+            if(true){
+                let y = "let stays in the if-block";
+                print("Y inside block=",y);
+            }
+            //print("Y outside block=",y);
+
+            print("Before Declaration=",testVar);
+            var testVar = "assigned value now";
+             print("After Declaration=",testVar);
+
+             try{
+                print("before let declaration",testLet);
+             }
+             catch(e){
+                print("Accessing let before declaration causes",e.name,e.message);
+             }
+             let testLet = "declared now";
+             print("After let declaration ",testLet);
+        }
+        document.getElementById("runBtn").addEventListener
+    ("click",run);
+    
+    </script>
+</body>
+</html>
