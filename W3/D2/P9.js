@@ -1,4 +1,5 @@
 //Immediately Invoked Function Expression
+
 //W/o parameters
 (function(){
     console.log("Basic IIFE executed Immediately");
