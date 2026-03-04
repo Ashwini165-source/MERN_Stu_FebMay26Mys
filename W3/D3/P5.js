@@ -1,4 +1,5 @@
 //Basics of Objects
+
 const person = {
     name: "Rahul",
     age: 30,
