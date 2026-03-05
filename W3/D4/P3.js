@@ -1,4 +1,5 @@
 //Array Map
+
 // let numArray = [1,2,3,4];
 // let squared = numArray.map(num => num*num);
 // console.log(squared);
