@@ -1,4 +1,4 @@
-//
+//P2.js
 
 const box = document.getElementById("box");
 const insideBtn = document.getElementById("insideBtn");
