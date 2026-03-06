@@ -1,7 +1,6 @@
 //P11.js
 const btn = document.getElementById("compareBtn");
 
-
 btn.addEventListener("click",function(e){
     console.log("Regular function");
     console.log("this===btn",this===btn);
