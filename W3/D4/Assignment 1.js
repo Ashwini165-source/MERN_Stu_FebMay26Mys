@@ -1,4 +1,5 @@
 // Assignment 1
+// Support Ticket Queue Processor
 let tickets = [
   { id: "T201", priority: "LOW", resolved: false },
   { id: "T202", priority: "MEDIUM", resolved: true },
