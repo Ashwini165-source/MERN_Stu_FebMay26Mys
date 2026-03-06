@@ -1,3 +1,4 @@
+//P11.js
 const btn = document.getElementById("compareBtn");
 
 
