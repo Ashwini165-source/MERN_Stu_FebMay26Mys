@@ -1,5 +1,4 @@
 //P10.js
-
 const ClickBtn = document.getElementById("ClickBtn");
 const demoInput = document.getElementById("demoInput");
 const runClick = document.getElementById("runClick");
