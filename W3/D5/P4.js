@@ -1,3 +1,4 @@
+// P4.js
 const input=document.getElementById("nameInput");
 const display = document.getElementById("display");
 
