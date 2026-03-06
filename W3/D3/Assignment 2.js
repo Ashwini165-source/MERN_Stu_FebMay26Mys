@@ -1,4 +1,5 @@
 // Assignment 2
+// Build a Compact Invoice Using Rest + Default
 function invoice(gstRate = 0.18, ...items) {
   let subtotal = 0;
 
