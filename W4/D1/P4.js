@@ -1,4 +1,4 @@
-//Logging
+// Logging
 console.log("Console logging");
 console.warn("Warning message");
 console.error("Error message");
