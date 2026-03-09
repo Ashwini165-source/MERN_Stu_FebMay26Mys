@@ -1,4 +1,4 @@
-// try catch Basics
+//try catch Basics
 // reference erroe
 try {
     console.log("Trying to access undefined variable");
