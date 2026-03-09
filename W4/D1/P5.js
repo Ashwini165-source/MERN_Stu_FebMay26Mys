@@ -6,6 +6,7 @@
 //Watch how variables change during the exection
 //to find logical errors
 //Browser
+
 function calculateTotal(prices){
     let total =0;
     for(let i = 0;i<prices.length;i++){
