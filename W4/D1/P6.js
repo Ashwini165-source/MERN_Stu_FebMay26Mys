@@ -11,6 +11,7 @@
 //  console.log("Example result: ",example());
 
 // return in catch block and still not finally
+
 function example1() {
     try {
         try {
