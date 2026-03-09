@@ -1,4 +1,4 @@
-// try catch Finally
+// Try catch Finally
 function parseConfig(text){
     try{
         let config = JSON.parse(text);
