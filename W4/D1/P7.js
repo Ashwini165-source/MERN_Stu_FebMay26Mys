@@ -1,4 +1,4 @@
-// Get element By Id
+// Get Element By Id
 console.log("Document Object:", document);
 console.log("Page title", document.title);
 
