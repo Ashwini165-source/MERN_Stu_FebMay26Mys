@@ -1,17 +1,21 @@
-//CreateElement() & appendChild()
+// CreateElement() & appendChild()
 
-const List = document.getElementById("list");
-let Counter = 1;
-
-document.getElementById("addBtn").addEventListener("click", function () {
+const list = document.getElementById("list");
+let counter = 1;
+document.getElementById("addBtn").addEventListener("click",
+    function(){
+        errMessage.textContent =" ";
     const li = document.createElement("li");
-    .textContent("No elements to delete")
-    li.textContent = "Item" + Counter++;
-    List.appendChild(li);
-});
-document.getElementById("rmBtn").addEventListener("click", function () {
-    if (List.lastElementChild){
-        List.removeChild(List.lastElementChild);
+    li.textContent = "Item "+ counter++;
+    list.appendChild(li);
     }
-    console.log("No elements to delete")
-});
+);
+document.getElementById("rmBtn").addEventListener("click",
+    function(){
+        if (list.lastElementChild) {
+        list.removeChild(list.lastElementChild);
+        }
+        else{
+             errMessage.textContent ="No items to delete";
+        }
+    });
