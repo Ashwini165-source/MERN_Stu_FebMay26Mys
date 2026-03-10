@@ -1,3 +1,4 @@
+// password and confirm password.js
 const signupForm = document.getElementById("signupForm");
 const signupPassword = document.getElementById("signupPassword");
 const confirmPassword = document.getElementById("confirmPassword");
