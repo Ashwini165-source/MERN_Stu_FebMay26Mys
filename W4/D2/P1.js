@@ -20,7 +20,6 @@ textReset.addEventListener("click", function () {
 });
 
 const box = document.getElementById("box");
-
 document.getElementById("innerHTMLBtn").addEventListener("click", function () {
     box.innerHTML = "<strong>Original Content</strong>";
 });
