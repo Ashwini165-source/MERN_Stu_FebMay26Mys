@@ -1,3 +1,4 @@
+//live Validation.js
 const livePassword = document.getElementById("livePassword");
 const message = document.getElementById("message");
 
