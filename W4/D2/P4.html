@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing FORM elements</title>
+</head>
+
+<body>
+    <form id="studentForm">
+        <label>Name: <input type="text" id="nameInput" name="name"></label> <br><br>
+        <label>Email: <input type="email" id="emailInput" name="email"></label> <br><br>
+        Gender:
+        <lable><input type="radio" name="gender" value="Male">Male</lable>
+        <lable><input type="radio" name="gender" value="Female">Female</lable><br><br>
+        <label><input type="checkbox" id="terms">Accept Terms</label><br><br>
+        <label>country:
+            <select id=country><br>
+                <option value="">Select</option><br>
+                <option value="India">India</option><br>
+                <option value="Germany">Germany</option><br>
+            </select></label><br><br>
+        <button type="button" id="inspectBtn">Inspect Form values</button>
+    </form>
+    <script src="./P4.js"></script>
+</body>
+
+</html>
