@@ -1,3 +1,4 @@
+//P3.js
 const themeInput = document.getElementById("themeInput");
 const output = document.getElementById("output");
 
