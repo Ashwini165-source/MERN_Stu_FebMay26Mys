@@ -1,5 +1,6 @@
 // Assignment 2
 // Payroll Cleanup and Net Pay Report
+
 const payrollRecords = [
   { name: "Ravi", basePay: 42000, bonus: 3000, taxRate: 0.15 },
   { name: "Meera", basePay: 38000, bonus: 2500, taxRate: 0.12 },
