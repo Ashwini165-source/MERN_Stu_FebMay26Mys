@@ -1,3 +1,4 @@
+//P5.js
 const introBtn = document.getElementById("introBtn");
 const output = document.getElementById("output");
 
