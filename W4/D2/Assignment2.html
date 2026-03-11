@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Analyzer</title>
+</head>
+
+<body>
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+        <label>Name:
+            <input type="text" id="name">
+        </label>
+        <br><br>
+        <label>Email:
+            <input type="text" id="email">
+        </label>
+        <br><br>
+        <label>Feedback Type:
+            <select id="type">
+                <option value="">Select</option>
+                <option value="Bug">Bug</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Appreciation">Appreciation</option>
+            </select>
+        </label>
+        <br><br>
+        <label>Feedback:
+            <textarea id="feedbackText"></textarea>
+        </label>
+        <br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <p id="message"></p>
+    <hr>
+    <h3>Total Feedback: <span id="count">0</span></h3>
+    <div id="feedbackContainer"></div>
+    <script src="Assignment2.js"></script>
+</body>
+
+</html>
