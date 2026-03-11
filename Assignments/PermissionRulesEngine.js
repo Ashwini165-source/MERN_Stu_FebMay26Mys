@@ -1,4 +1,5 @@
 // Permission Rules Engine Summary
+
 let rules = [
     { role: "admin", action: "READ", allowed: true },
     { role: "admin", action: "WRITE", allowed: false },
