@@ -1,5 +1,6 @@
 // Assignment 1
 // Password Strength Tagger
+
 function tagPassword(password) {
     if (typeof password !== "string") {
         return "INVALID";
