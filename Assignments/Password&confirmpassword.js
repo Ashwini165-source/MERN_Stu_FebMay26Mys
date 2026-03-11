@@ -9,7 +9,6 @@ signupForm.addEventListener("submit", function(event){
 
     const password = signupPassword.value;
     const confirm = confirmPassword.value;
-
     // Password required
     if(!password){
         message.textContent = "Password is required.";
