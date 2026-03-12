@@ -1,3 +1,5 @@
+//P2.js
+
 const translations = {
     kn: {title: "ಸ್ವಾಗತ" , desc: "ಇದು ಸ್ಥಳೀಕೃತ ಇಂಟರ್ಫೇಸ್"},
     en: {title: "welcome", desc:"This is a localized interface" },
