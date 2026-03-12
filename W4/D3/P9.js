@@ -4,6 +4,7 @@ const postIdInput = document.getElementById("postIdInput");
 
 asyncFetchBtn.addEventListener("click", async function () {
     const id = postIdInput.value.trim();
+    
     if (id === "") {
         output.textContent = "Post Id is required";
         return;
