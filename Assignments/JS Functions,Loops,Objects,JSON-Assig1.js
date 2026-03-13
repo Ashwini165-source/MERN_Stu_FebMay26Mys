@@ -1,4 +1,4 @@
-// Assignment 1
+
 // Password Strength Tagger
 
 function tagPassword(password) {
