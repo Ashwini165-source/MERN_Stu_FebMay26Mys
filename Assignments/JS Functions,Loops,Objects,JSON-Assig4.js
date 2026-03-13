@@ -1,6 +1,5 @@
 
 // Role-Based Route Resolver Using switch + Functions
-
 // Function Expression
 const getRoute = function(role, isLoggedIn) {
     
