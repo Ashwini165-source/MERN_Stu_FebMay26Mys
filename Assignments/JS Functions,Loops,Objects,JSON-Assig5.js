@@ -1,4 +1,4 @@
-// Creating wallet object
+
 
 // Wallet with ‘this’ keyword
 const wallet = {
