@@ -1,4 +1,4 @@
-// Assignment 1
+
 // Support Ticket Queue Processor
 
 let tickets = [
