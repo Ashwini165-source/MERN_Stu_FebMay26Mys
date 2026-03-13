@@ -1,5 +1,4 @@
 
-
 // Wallet with ‘this’ keyword
 const wallet = {
     owner: "Ashwini",
