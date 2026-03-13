@@ -1,4 +1,5 @@
 //FAQBuilder.js
+
 const faqForm = document.getElementById("faqForm");
 const questionInput = document.getElementById("question");
 const answerInput = document.getElementById("answer");
