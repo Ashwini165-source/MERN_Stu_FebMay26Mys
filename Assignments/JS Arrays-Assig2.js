@@ -1,4 +1,4 @@
-// Assignment 2
+
 // Payroll Cleanup and Net Pay Report
 
 const payrollRecords = [
