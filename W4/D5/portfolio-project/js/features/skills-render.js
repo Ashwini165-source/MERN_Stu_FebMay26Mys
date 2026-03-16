@@ -1,4 +1,5 @@
 function renderSkills(){
+    
     const skillsContainer = document.getElementById("skills-container");
 
     if(!skillsContainer){
