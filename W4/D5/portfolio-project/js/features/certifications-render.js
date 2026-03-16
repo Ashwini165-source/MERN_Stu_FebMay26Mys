@@ -1,5 +1,5 @@
 function renderCertifications(){
-
+    
     const container = document.getElementById("certifications-container");
 
     if(!container){
