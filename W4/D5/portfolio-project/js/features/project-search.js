@@ -1,4 +1,5 @@
 function projectSearch(){
+    
     const projectContainer = document.getElementById("projects-container");
 
     if(!projectContainer){
