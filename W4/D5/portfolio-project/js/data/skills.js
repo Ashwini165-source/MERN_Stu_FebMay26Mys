@@ -1,4 +1,3 @@
-
 const skillsData = [
   {
     id: 1,
