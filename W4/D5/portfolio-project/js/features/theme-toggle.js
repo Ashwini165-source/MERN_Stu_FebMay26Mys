@@ -1,4 +1,5 @@
 function initThemeToggle(){
+    
     const toggleBtn = document.getElementById("theme-toggle");
     const body = document.body;
 
