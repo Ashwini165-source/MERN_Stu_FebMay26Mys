@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded",function(){
     initContactValidation();
     initThemeToggle();
     projectSearch();
+    
     renderCertifications();
     renderParticipations();
     renderPublications();
