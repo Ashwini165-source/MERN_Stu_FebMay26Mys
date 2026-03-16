@@ -1,4 +1,5 @@
 function initModal(){
+    
     const modal = document.getElementById("contact-modal");
     const modalContent = document.getElementById("modal-content");
     const modalTrigger = document.getElementById("modal-trigger");
