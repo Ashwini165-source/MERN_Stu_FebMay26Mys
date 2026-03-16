@@ -1,4 +1,5 @@
 function initContactValidation() {
+    
     const contactModal = document.getElementById("contact-modal");
     const contactForm = document.getElementById("contact-form");
     const contactName = document.getElementById("contact-name");
