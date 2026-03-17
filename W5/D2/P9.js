@@ -1,4 +1,5 @@
 //promise states: pending,fulfilled,rejected
+
 const fulfilledPromise = new Promise(function (resolve) {
     console.log("fulfilledPromise is pending.");
 
