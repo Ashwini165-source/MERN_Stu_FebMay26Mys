@@ -1,5 +1,4 @@
 //chaining Promises with returned value
-
 function getBaseAmount(){
     return new Promise(function(resolve){
         setTimeout(function(){
