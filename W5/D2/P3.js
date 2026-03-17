@@ -3,14 +3,14 @@
 console.log("Step 1:Script started.");
 
 setTimeout(() => {
-},1000);
+}, 1000);
 
-setTimeout(function() {
+setTimeout(function () {
     console.log("Step 3: Delayed callback finished. F1");
-},10000);
+}, 10000);
 
-setTimeout(function() {
+setTimeout(function () {
     console.log("Step 3: Delayed callback finished. F2");
-},3000);
+}, 3000);
 
 console.log("Step 2:Script did not stop while waiting.");
