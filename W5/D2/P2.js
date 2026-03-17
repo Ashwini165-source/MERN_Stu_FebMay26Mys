@@ -21,4 +21,5 @@ function showDetailedMessage(message){
 }
 
 runTask(showSimpleDoneMessage);
+
 runTaskWithResult("Send monthly report",showDetailedMessage);
