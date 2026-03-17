@@ -6,9 +6,7 @@ function processStudent(name, score, callback, monkey) {
 
     callback(name, score);
     monkey(name, score);
-
-
-
+    
 }
 function showResult(name, score) {
     if (score >= 70) {
