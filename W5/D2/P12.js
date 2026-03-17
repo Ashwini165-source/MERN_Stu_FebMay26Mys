@@ -1,4 +1,5 @@
 //chaining promises with centralized error handling
+
 function validateLogin(){
     return new Promise(function(resolve){
         setTimeout(function(){
