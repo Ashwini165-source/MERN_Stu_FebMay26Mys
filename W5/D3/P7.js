@@ -1,4 +1,5 @@
 //Sequential await vs Promise execution
+
 function taskA(){
     return new Promise(function(resolve){
         setTimeout(function(){
