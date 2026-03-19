@@ -40,3 +40,4 @@ function renderPublications() {
     console.log("Publications rendered successfully");
 
 }
+
