@@ -1,31 +1,32 @@
-function renderPublications(){
+function renderPublications() {
 
     const container = document.getElementById("publications-container");
 
-    if(!container){
+    if (!container) {
         console.log("Publications container not found");
         return;
     }
 
     container.innerHTML = "";
 
-    publicationsData.forEach(function(pub){
+    publicationsData.forEach(function (pub) {
 
         const card = document.createElement("div");
+        card.style.cssText = "padding:24px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.12); background:linear-gradient(to right, #ec4899, #9333ea); color:#fff; transition:transform 0.3s; cursor:default;";
 
-        card.className =
-        "p-6 rounded-2xl shadow-xl bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:scale-105 transition duration-300";
+        card.addEventListener("mouseover", function () { card.style.transform = "scale(1.05)"; });
+        card.addEventListener("mouseout", function () { card.style.transform = "scale(1)"; });
 
         const title = document.createElement("h3");
-        title.className = "text-lg font-bold mb-2";
+        title.style.cssText = "font-size:16px; font-weight:700; margin-bottom:8px; line-height:1.4;";
         title.textContent = pub.title;
 
         const publisher = document.createElement("p");
-        publisher.className = "text-sm";
+        publisher.style.cssText = "font-size:13px;";
         publisher.textContent = "Publisher: " + pub.publisher;
 
         const year = document.createElement("p");
-        year.className = "text-sm font-semibold mt-1";
+        year.style.cssText = "font-size:13px; font-weight:600; margin-top:4px;";
         year.textContent = "Year: " + pub.year;
 
         card.appendChild(title);

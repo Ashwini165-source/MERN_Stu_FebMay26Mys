@@ -1,45 +1,56 @@
-function renderSkills(){
-    
+function renderSkills() {
+
     const skillsContainer = document.getElementById("skills-container");
 
-    if(!skillsContainer){
+    if (!skillsContainer) {
         console.log("Skills Container not found");
         return;
     }
 
     skillsContainer.innerHTML = "";
-    skillsData.forEach(function(skill){
-        //to create outer card
+
+    skillsData.forEach(function (skill) {
+
+        // Outer card
         const card = document.createElement("div");
-        card.className = "p-8 text-center bg-white rounded-3xl shadow-lg";
+        card.style.cssText = "padding:32px; text-align:center; background:#fff; border-radius:24px; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:box-shadow 0.3s, transform 0.3s; cursor:default;";
 
-        //create icon
+        card.addEventListener("mouseover", function () {
+            card.style.boxShadow = "0 8px 30px rgba(0,0,0,0.14)";
+            card.style.transform = "translateY(-4px)";
+        });
+        card.addEventListener("mouseout", function () {
+            card.style.boxShadow = "0 4px 16px rgba(0,0,0,0.08)";
+            card.style.transform = "translateY(0)";
+        });
+
+        // Icon box
         const iconBox = document.createElement("div");
-        iconBox.className = "w-20 h-20 mx-auto mb-4 bg-green-900 rounded-2xl flex item-center justify-center";
+        iconBox.style.cssText = "width:80px; height:80px; margin:0 auto 16px auto; background:#14532d; border-radius:16px; display:flex; align-items:center; justify-content:center;";
 
-        //create icon text
+        // Icon text (shortLabel)
         const iconText = document.createElement("span");
-        iconText.className = "text-2xl text-white font-bold";
+        iconText.style.cssText = "font-size:24px; color:#fff; font-weight:700;";
         iconText.textContent = skill.shortLabel;
 
-        //put icon text inside icon box
         iconBox.appendChild(iconText);
 
-        //create skill name
+        // Skill name
         const skillName = document.createElement("h3");
-        skillName.className = "text-xl font-bold mb-2";
+        skillName.style.cssText = "font-size:18px; font-weight:700; margin-bottom:8px; color:#1f2937;";
         skillName.textContent = skill.name;
 
-        //create skill description
+        // Skill description
         const skillDescription = document.createElement("p");
-        skillDescription.className = "text-sm";
+        skillDescription.style.cssText = "font-size:13px; color:#6b7280; line-height:1.5;";
         skillDescription.textContent = skill.description;
-       //Append all child elements to card
+
         card.appendChild(iconBox);
         card.appendChild(skillName);
         card.appendChild(skillDescription);
-        //Append card to skills container
+
         skillsContainer.appendChild(card);
     });
+
     console.log("Skills rendered successfully");
 }

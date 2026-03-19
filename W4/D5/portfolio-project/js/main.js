@@ -1,12 +1,16 @@
-document.addEventListener("DOMContentLoaded",function(){
-    //Render Skills
+document.addEventListener("DOMContentLoaded", function () {
     renderSkills();
-    initModal();
-    initContactValidation();
-    initThemeToggle();
-    projectSearch();
-    
     renderCertifications();
     renderParticipations();
     renderPublications();
+
+    initModal();
+    initContactValidation();
+
+    // Features
+    initThemeToggle();
+    initNavbarScroll();
+    initProjectFilter();     
+    initTodo();
+    initImagePreview();
 });

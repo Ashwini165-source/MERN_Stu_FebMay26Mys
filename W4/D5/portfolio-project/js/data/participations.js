@@ -1,14 +1,7 @@
 
 
 const participationsData = [
-    {
-        id : 1,
-        title : "INCEPTRIX",
-        year : "May 2025"
-    },
-    {
-        id : 2,
-        title : "Smart India Hackathon (SIH)",
-        year : "October 2024"
-    }
-]; 
+  { title: "Hackathon Participation", year: "2025" },
+  { title: "Coding Contest (Competitive Programming)", year: "2025" },
+  { title: "Tech Webinar / Workshop", year: "2026" },
+];

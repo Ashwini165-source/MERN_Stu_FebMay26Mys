@@ -1,26 +1,42 @@
 const skillsData = [
   {
-    id: 1,
-    name: "ReactJS",
-    shortLabel: "R",
-    description: "Advanced Hooks, component-based UI, and state management."
-  },
-  {
-    id: 2,
-    name: "Tailwind CSS",
-    shortLabel: "T",
-    description: "Responsive layouts, utility-first styling, and clean UI building."
-  },
-  {
-    id: 3,
+    shortLabel: "JS",
     name: "JavaScript",
-    shortLabel: "J",
-    description: "DOM manipulation, events, validation, Fetch API, and storage."
+    description: "ES6+, DOM manipulation, events, async patterns, and browser APIs.",
   },
   {
-    id: 4,
+    shortLabel: "RE",
+    name: "React",
+    description: "Component-driven UI, hooks, routing patterns, and state management basics.",
+  },
+  {
+    shortLabel: "ND",
+    name: "Node.js",
+    description: "REST APIs, Express middleware, authentication patterns, and tooling.",
+  },
+  {
+    shortLabel: "DB",
     name: "MongoDB",
-    shortLabel: "M",
-    description: "Document-based database design and backend integration."
-  }
+    description: "Schema design basics, queries, indexes, and aggregation fundamentals.",
+  },
+  {
+    shortLabel: "TW",
+    name: "Tailwind CSS",
+    description: "Utility-first styling, responsive layout, and consistent UI systems.",
+  },
+  {
+    shortLabel: "GI",
+    name: "Git & GitHub",
+    description: "Branching workflow, commits, PR basics, and collaboration.",
+  },
+  {
+    shortLabel: "DS",
+    name: "DSA",
+    description: "Problem solving with arrays, strings, recursion, trees, graphs, and DP basics.",
+  },
+  {
+    shortLabel: "CS",
+    name: "Computer Science",
+    description: "OOP, OS basics, networking fundamentals, and debugging mindset.",
+  },
 ];
