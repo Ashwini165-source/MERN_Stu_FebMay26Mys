@@ -1,4 +1,5 @@
 // CommonJS export and import
+
 function calculateTax(amount){
     return amount*0.18;
 }
