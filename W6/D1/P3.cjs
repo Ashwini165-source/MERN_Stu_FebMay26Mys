@@ -1,4 +1,5 @@
 // Using Custom CommonJs Module
+
 const {calculateTax,applyDiscount,formatCurrency} = require("./P2.cjs");
 
 const itemName = "Laptop";
