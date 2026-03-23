@@ -1,6 +1,7 @@
 //Usage of built-in and third-party modules
 
 //path is a built-in module,so it works without installation
+
 const path = require("path");
 
 const invoicePath = path.join("invoices", "2026", "invoice_001.txt");
