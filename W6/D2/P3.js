@@ -1,4 +1,5 @@
 //Event loop with multiple asynchronous tasks
+
 console.log("Main script started.");
 //Task 1
 setTimeout(() => {
