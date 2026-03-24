@@ -1,4 +1,5 @@
 //How JS handles asynchronous task in NodeJS
+
 function fetchReport(callback) {
     console.log("Fetching report data...");
 
