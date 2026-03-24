@@ -2,7 +2,7 @@
   "name": "node-modules-example",
   "version": "1.0.0",
   "main": "P1.js",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "lodash": "^4.17.23"
   }
