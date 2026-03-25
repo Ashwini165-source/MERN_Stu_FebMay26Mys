@@ -5,7 +5,7 @@ const path = require("path");
 const filePath = path.join(__dirname, "async-note.txt");
 
 // To write to a file 
-fs.writeFile(
+fs.appendFile(
     filePath,
     "This is writen asynchronously using writeFile().",
     function (writeError) {
