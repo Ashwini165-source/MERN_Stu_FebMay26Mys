@@ -5,11 +5,21 @@ const path = require("path");
 
 const filePath = path.join(__dirname,"sync-note.txt");
 
-fs.writeFileSync(filePath,"This file was written using writeFileSync().\nSysnchronous operation block execution");
+//fs.writeFileSync(filePath,"This file was written using writeFileSync().\nSysnchronous operation block execution");
+//Append to a file
+fs.appendFile(filePath,"New text added using fs.appendFile.",
+    function(error){
+        if(error){
+            console.log("Append error: ",error.message);
+            return;
+        }
+        console.log("File content appended");
+    }
+);
 
 console.log("File written synchronously.");
 
 const content = fs.readFileSync(filePath,"utf-8");
 
 console.log("File read synchronously.");
-console.log(content);
+console.log("File content:\n",content);
