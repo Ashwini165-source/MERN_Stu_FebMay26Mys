@@ -17,7 +17,6 @@ fs.writeFile(
     }
 );
 
-
 const content = fs.readFile(filePath, "utf-8",
     function (readError, content) {
         if (readError) {
