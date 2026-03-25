@@ -1,0 +1,2 @@
+This file was written using writeFileSync().
+Sysnchronous operation block execution
