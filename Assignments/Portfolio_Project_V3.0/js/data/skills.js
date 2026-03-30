@@ -1,4 +1,3 @@
-
 const skillsData = [
   {
     shortLabel: "JS",
