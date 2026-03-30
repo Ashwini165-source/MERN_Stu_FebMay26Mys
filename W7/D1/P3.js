@@ -5,8 +5,14 @@ const app = express();
 
 //To read
 app.get("/users",function(req,res){
-    res.send("Returning all Users");
+    res.status(200).json([{message:"Success"},
+        {id:1,name:"Ashwini"},
+        {id:2,name:"John"},
+        {id:3,name:"Jane"},
+    ]);
+     //res.send("Returning all Users");
 });
+
 //To create
  app.post("/users",function(req,res){
     //res.status() sets the HTTP status code before sending the response body
