@@ -1,4 +1,3 @@
-
 function updateActiveNavLink() {
     var elements = window.portfolioElements;
     var state = window.portfolioState;
