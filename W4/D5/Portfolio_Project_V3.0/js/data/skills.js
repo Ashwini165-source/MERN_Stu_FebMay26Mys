@@ -1,3 +1,4 @@
+
 const skillsData = [
   {
     shortLabel: "JS",
