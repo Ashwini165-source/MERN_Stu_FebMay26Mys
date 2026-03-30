@@ -1,3 +1,4 @@
+
 function handleCardHover(event, isEnter) {
     // Disable hover effects on non-hover or coarse pointer devices
     if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
