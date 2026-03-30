@@ -1,3 +1,4 @@
+
 function updateScrollMetrics() {
     var state = window.portfolioState;
     var totalHeight = document.documentElement.scrollHeight - window.innerHeight;
