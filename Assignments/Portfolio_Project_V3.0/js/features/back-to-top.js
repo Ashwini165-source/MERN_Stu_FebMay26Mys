@@ -1,4 +1,3 @@
-
 function initBackToTop() {
     var elements = window.portfolioElements;
     if (!elements.backToTop) return;
