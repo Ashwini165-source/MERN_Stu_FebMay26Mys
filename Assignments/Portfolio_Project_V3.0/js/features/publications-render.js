@@ -1,4 +1,3 @@
-
 function renderPublications() {
     var elements = window.portfolioElements;
     if (!elements.publicationsContainer || typeof publicationsData === 'undefined' || !Array.isArray(publicationsData)) return;
