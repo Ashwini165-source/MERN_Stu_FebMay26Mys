@@ -1,4 +1,3 @@
-
 // ── 1. Global State ────────────────────────────────────────────────────────────
 window.portfolioState = {
     projectsData:        typeof projectsData !== "undefined" ? projectsData : [],
