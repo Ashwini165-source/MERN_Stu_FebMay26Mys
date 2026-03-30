@@ -1,3 +1,4 @@
+
 function renderCertifications() {
     var elements = window.portfolioElements;
     if (!elements.certificationsContainer || typeof certificationsData === 'undefined' || !Array.isArray(certificationsData)) return;
