@@ -1,4 +1,3 @@
-
 function initTypingAnimation() {
     var elements = window.portfolioElements;
     if (!elements.typingText) return;
