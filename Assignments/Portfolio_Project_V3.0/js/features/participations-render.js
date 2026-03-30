@@ -1,4 +1,3 @@
-
 function renderParticipations() {
     var elements = window.portfolioElements;
     if (!elements.participationsContainer || typeof participationsData === 'undefined' || !Array.isArray(participationsData)) return;
