@@ -1,4 +1,3 @@
-
 function renderProjects() {
     var state = window.portfolioState;
     var elements = window.portfolioElements;
