@@ -1,9 +1,7 @@
-
-
 const projectsData = [
   {
     name: "Portfolio Website",
-    description: "Responsive personal portfolio with dynamic sections and interactive UI features.",
+    description: "A highly responsive and visually striking personal portfolio website built from the ground up to showcase my journey as a full-stack developer. It comes fully equipped with dynamic sections, advanced interactive UI features like smart category filtering, real-time live search, expanding components, and a custom smooth-scrolling architecture. This comprehensive project elegantly demonstrates my modern frontend development capabilities.",
     category: "Frontend",
     technologies: ["HTML", "Tailwind CSS", "JavaScript"],
     status: "Live",
@@ -12,7 +10,7 @@ const projectsData = [
   },
   {
     name: "Task Manager",
-    description: "CRUD task manager with filters, search, and persistent storage.",
+    description: "A robust and scalable CRUD task manager application designed for maximum productivity. It features sophisticated multi-parameter filtering, lightning-fast search capabilities, and persistent database storage ensuring reliable data retention across multiple sessions. Users can dynamically organize, prioritize, and manage their daily workflow using seamlessly integrated drag-and-drop components.",
     category: "Full Stack",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     status: "In Progress",

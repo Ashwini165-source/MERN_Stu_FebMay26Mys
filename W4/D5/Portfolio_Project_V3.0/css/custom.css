@@ -1,0 +1,511 @@
+# Responsive Base (mobile-first)
+/* 1) Border-box sizing for predictable layouts */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* 2) Improve default text rendering and ensure mobile-friendly sizing */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+/* 3) Fluid media — images, videos, canvases, and SVGs scale with their containers */
+img, picture, video, canvas, svg {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Iframes and embedded media */
+iframe, embed {
+	max-width: 100%;
+	display: block;
+	border: 0;
+}
+
+/* Media utilities */
+.u-object-cover { object-fit: cover; }
+.u-object-contain { object-fit: contain; }
+.u-object-fill { object-fit: fill; }
+.u-object-scale-down { object-fit: scale-down; }
+.u-object-none { object-fit: none; }
+.u-object-center { object-position: center; }
+.u-object-top { object-position: top; }
+.u-object-bottom { object-position: bottom; }
+.u-object-left { object-position: left; }
+.u-object-right { object-position: right; }
+
+/* Aspect ratio helpers */
+.u-aspect-square { aspect-ratio: 1 / 1; }
+.u-aspect-video { aspect-ratio: 16 / 9; }
+.u-aspect-photo { aspect-ratio: 4 / 3; }
+.u-aspect-ultrawide { aspect-ratio: 21 / 9; }
+
+/* Media frame wrapper to prevent overflow and maintain aspect ratio */
+.media-frame {
+	position: relative;
+	overflow: hidden;
+}
+.media-frame > img,
+.media-frame > video,
+.media-frame > iframe {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* 4) Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+body {
+	font-size: clamp(1rem, 0.97rem + 0.2vw, 1.0625rem);
+	line-height: 1.65;
+	letter-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 1.2;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 { font-size: clamp(2rem, 1.6rem + 2vw, 3rem); }
+h2 { font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem); }
+h5 { font-size: clamp(1.125rem, 1.02rem + 0.4vw, 1.25rem); }
+h6 { font-size: clamp(1rem, 0.98rem + 0.2vw, 1.125rem); }
+
+p, ul, ol, dl, blockquote, pre {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+small, .text-small {
+	font-size: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);
+	line-height: 1.6;
+}
+
+.lead {
+	font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+	line-height: 1.6;
+}
+
+.measure { max-width: 65ch; }
+.measure-narrow { max-width: 45ch; }
+.measure-wide { max-width: 75ch; }
+
+code, kbd, samp, pre {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.95em;
+}
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+#scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+	width: 100%;
+	height: 0.25rem;
+    z-index: 60;
+    background: linear-gradient(to right, #3b82f6, #06b6d4);
+    transform-origin: left center;
+	transform: scaleX(0);
+	will-change: transform;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#main-navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+#main-navbar a.nav-active {
+    color: #2563eb;
+}
+
+body.dark-mode {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Dark mode navbar: */
+body.dark-mode #main-navbar {
+    background-color: rgba(15, 23, 42, 0.25) !important;
+    border-color: rgba(148, 163, 184, 0.25) !important;
+}
+
+body.dark-mode #main-navbar a,
+body.dark-mode #main-navbar span,
+body.dark-mode #main-navbar button {
+    color: #f1f5f9;
+}
+
+body.dark-mode #main-navbar a:hover {
+    color: #60a5fa;
+}
+
+body.dark-mode #main-navbar a.nav-active {
+    color: #93c5fd;
+}
+
+body.dark-mode section {
+    background-color: #0f172a;
+}
+
+body.dark-mode .bg-blue-100,
+body.dark-mode .bg-indigo-50 {
+    background-color: #1e293b !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border-color: #334155;
+}
+
+body.dark-mode .bg-white {
+    background-color: #1e293b !important;
+    color: #e2e8f0;
+}
+
+/* Back to top button */
+.back-to-top-btn {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+.back-to-top-btn.show-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* CSS Custom Properties for documentation/reference (optional) */
+:root {
+	--bp-sm: 30rem;   /* 480px */
+	--bp-md: 48rem;   /* 768px */
+	--bp-lg: 64rem;   /* 1024px */
+	--bp-xl: 80rem;   /* 1280px+ */
+}
+
+/* 1) Container utility — centers content with responsive max-widths */
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	max-width: 100%;
+}
+@media (min-width: 30rem) { /* sm */
+	.container { max-width: 28rem; }
+}
+@media (min-width: 48rem) { /* md */
+	.container { max-width: 44rem; }
+}
+@media (min-width: 64rem) { /* lg */
+	.container { max-width: 60rem; }
+}
+@media (min-width: 80rem) { /* xl */
+	.container { max-width: 72rem; }
+}
+
+/* 2) Grid utilities — simple responsive column helpers */
+.u-grid {
+	display: grid;
+	gap: 1rem;
+}
+.u-grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+/* At sm and up */
+@media (min-width: 30rem) {
+	.u-grid-sm-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.u-grid-sm-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* At md and up */
+@media (min-width: 48rem) {
+	.u-grid-md-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.u-grid-md-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.u-grid-md-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+/* At lg and up */
+@media (min-width: 64rem) {
+	.u-grid-lg-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.u-grid-lg-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.u-grid-lg-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+/* At xl and up */
+@media (min-width: 80rem) {
+	.u-grid-xl-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.u-grid-xl-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.u-grid-xl-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* 3) Visibility utilities — show/hide from a breakpoint upward */
+@media (min-width: 30rem) { .u-hide-sm { display: none !important; } }
+@media (min-width: 48rem) { .u-hide-md { display: none !important; } }
+@media (min-width: 64rem) { .u-hide-lg { display: none !important; } }
+@media (min-width: 80rem) { .u-hide-xl { display: none !important; } }
+
+/* 4) Text alignment utilities (examples) */
+@media (min-width: 30rem) { .u-text-center-sm { text-align: center; } }
+@media (min-width: 48rem) { .u-text-center-md { text-align: center; } }
+@media (min-width: 64rem) { .u-text-center-lg { text-align: center; } }
+@media (min-width: 80rem) { .u-text-center-xl { text-align: center; } }
+@media (min-width: 48rem) {
+	/* tablets and up overrides */
+}
+@media (min-width: 64rem) {
+	/* laptops and up overrides */
+}
+@media (min-width: 80rem) {
+	/* desktops and up overrides */
+}
+/* Flexbox — alignment and distribution */
+.u-flex { display: flex; }
+.u-inline-flex { display: inline-flex; }
+.u-flex-col { flex-direction: column; }
+.u-flex-row { flex-direction: row; }
+.u-flex-wrap { flex-wrap: wrap; }
+.u-items-start { align-items: flex-start; }
+.u-items-center { align-items: center; }
+.u-items-end { align-items: flex-end; }
+.u-justify-start { justify-content: flex-start; }
+.u-justify-center { justify-content: center; }
+.u-justify-between { justify-content: space-between; }
+.u-justify-around { justify-content: space-around; }
+.u-justify-end { justify-content: flex-end; }
+
+/* Simple gap scale (in rem) */
+.u-gap-2 { gap: 0.5rem; }
+.u-gap-4 { gap: 1rem; }
+.u-gap-6 { gap: 1.5rem; }
+.u-gap-8 { gap: 2rem; }
+
+/* Grid — section scaffolds */
+.section-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+/* Cards grids: common patterns for project/skill-like sections */
+.grid-cards-2 {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cards-3 {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+/* Scale up responsively using the shared breakpoints */
+@media (min-width: 30rem) { /* sm */
+	.section-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.grid-cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.grid-cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 48rem) { /* md */
+	.section-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.grid-cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.grid-cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) { /* lg */
+	.section-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.grid-cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.grid-cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 80rem) { /* xl */
+	.section-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.grid-cards-2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.grid-cards-3 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+
+.navbar-mobile-panel {
+	position: absolute;
+	inset-inline: 0;
+	left: 0;   /* logical property fallback */
+	right: 0;  /* logical property fallback */
+	top: 100%;
+	z-index: 50;
+	opacity: 0;
+	visibility: hidden;
+	transform-origin: top center;
+	transform: scaleY(0.98);
+	transition: opacity 200ms ease, transform 200ms ease, visibility 200ms step-end;
+}
+.navbar-mobile-panel.open {
+	opacity: 1;
+	visibility: visible;
+	transform: scaleY(1);
+	transition: opacity 220ms ease, transform 220ms ease, visibility 0ms step-start;
+}
+
+
+
+/* Project and Skill cards — constrain and allow wrapping */
+#projects-container > * ,
+#skills-container > * {
+	min-width: 0;              /* prevents overflow in grid/flex contexts */
+	max-width: 100%;
+	overflow: visible;
+}
+#projects-container h3,
+#projects-container p,
+#projects-container span,
+#skills-container h3,
+#skills-container p,
+#skills-container span {
+	overflow-wrap: anywhere;   /* break long words/URLs */
+	word-break: break-word;
+}
+
+/* Spacing rhythm inside cards (non-destructive: only adds if absent) */
+#projects-container > * > *:not(:last-child),
+#skills-container > * > *:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+@media (min-width: 48rem) {
+	#projects-container > * > *:not(:last-child),
+	#skills-container > * > *:not(:last-child) {
+		margin-bottom: 0.75rem;
+	}
+}
+
+/* Reduce heavy hover effects on coarse pointers (mobile) to avoid repaints */
+@media (hover: none), (pointer: coarse) {
+	/* Disable Tailwind hover scale on hero image if present */
+	.hover\:scale-\[1\.02\]:hover {
+		transform: none !important;
+	}
+
+	/* Increase tap target sizes to at least 44x44px on touch devices */
+	a, button, .filter-btn, .skill-filter-btn, .back-to-top-btn, #theme-toggle, #modal-trigger,
+	#theme-toggle-mobile, #modal-trigger-mobile, #nav-toggle {
+		min-height: 44px;
+		min-width: 44px;
+	}
+
+	/* Add comfortable block padding for nav links and mobile menu items */
+	#main-navbar a,
+	#mobile-menu a {
+		padding-block: 0.75rem;
+	}
+
+	/* Spacing between adjacent clickable elements when stacked */
+	.u-tap-gap > * + * {
+		margin-top: 0.5rem;
+	}
+
+	/* Utility to enforce tap size where needed */
+	.u-tap {
+		min-height: 44px;
+		min-width: 44px;
+	}
+}
+
+
+/* Backdrop blur support across engines with graceful fallback */
+.backdrop-blur-md {
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+}
+@supports not ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))) {
+	.backdrop-blur-md {
+		background-color: rgba(255, 255, 255, 0.98) !important;
+	}
+	body.dark-mode .backdrop-blur-md {
+		background-color: rgba(15, 23, 42, 0.9) !important;
+	}
+}
+
+/* Aspect-ratio fallbacks for older browsers (works when used on container elements) */
+@supports not (aspect-ratio: 1 / 1) {
+	.u-aspect-square,
+	.u-aspect-video,
+	.u-aspect-photo,
+	.u-aspect-ultrawide {
+		position: relative;
+		display: block;
+	}
+	.u-aspect-square::before { content: ""; display: block; padding-top: 100%; }
+	.u-aspect-photo::before { content: ""; display: block; padding-top: 75%; }      /* 4:3 */
+	.u-aspect-video::before { content: ""; display: block; padding-top: 56.25%; }   /* 16:9 */
+	.u-aspect-ultrawide::before { content: ""; display: block; padding-top: 42.857%; } /* 21:9 */
+
+	/* Fill content into the padded box (avoid for replaced elements like img/video/iframe) */
+	.u-aspect-square > *,
+	.u-aspect-photo > *,
+	.u-aspect-video > *,
+	.u-aspect-ultrawide > * {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* Forms — full-width, wrap-friendly inputs and safe spacing */
+#contact-form input,
+#contact-form textarea,
+#contact-form select {
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+#contact-form .form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+@media (min-width: 48rem) {
+	#contact-form .form-row {
+		flex-direction: row;
+	}
+}
+
+/* Buttons and links — allow wrapping to avoid clipping */
+button,
+.filter-btn,
+.skill-filter-btn,
+#projects-container a {
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+/* Utility: stack on small screens, row on md+ */
+.u-stack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+@media (min-width: 48rem) {
+	.u-stack {
+		flex-direction: row;
+		align-items: center;
+	}
+}
