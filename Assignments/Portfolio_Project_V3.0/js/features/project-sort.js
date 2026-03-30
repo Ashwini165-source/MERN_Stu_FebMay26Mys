@@ -1,4 +1,3 @@
-
 function initProjectSort() {
     var elements = window.portfolioElements;
     var state = window.portfolioState;
