@@ -1,3 +1,4 @@
+
 var CONTACT_STORAGE_KEY = "portfolio-contact-form";
 
 function saveContactForm() {
