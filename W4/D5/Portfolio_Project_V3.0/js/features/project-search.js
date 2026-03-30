@@ -1,3 +1,4 @@
+
 function initProjectSearch() {
     var elements = window.portfolioElements;
     var state = window.portfolioState;
