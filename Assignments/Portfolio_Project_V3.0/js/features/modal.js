@@ -1,4 +1,3 @@
-
 function initModal() {
     var elements = window.portfolioElements;
     if (!elements.modal || !elements.modalContent || !elements.modalTrigger || !elements.modalClose || !elements.formCancel) {
