@@ -1,3 +1,4 @@
+
 function applyTheme(theme) {
     var state = window.portfolioState;
     var elements = window.portfolioElements;
