@@ -1,4 +1,3 @@
-
 function fetchUserLocation() {
     var elements = window.portfolioElements;
     if (!elements.heroLocation) return;
