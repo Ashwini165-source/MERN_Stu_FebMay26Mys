@@ -1,4 +1,3 @@
-
 function renderGreeting() {
     var elements = window.portfolioElements;
     if (!elements.heroGreeting) return;
