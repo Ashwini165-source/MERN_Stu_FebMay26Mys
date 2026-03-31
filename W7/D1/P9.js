@@ -18,7 +18,7 @@ app.get("/ok",function(req,res){
         source:req.requestSource
     });
 });
-app.get("/fail",function(req,res){
+app.get("/fail",function(req,res,next){
     next(new Error("Route failure"));
 });
 //Error-handling : global error handler
