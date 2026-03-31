@@ -1,4 +1,4 @@
-//Third-arty middleware are available @ npm registry
+//Third-party middleware are available @ npm registry
 const express = require("express");
 
 //Middleware to log all the requests
