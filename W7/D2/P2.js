@@ -1,5 +1,6 @@
 //Third-arty middleware are available @ npm registry
 const express = require("express");
+
 //Middleware to log all the requests
 const morgan = require("morgan");
 
