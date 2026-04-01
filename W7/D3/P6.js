@@ -1,4 +1,5 @@
 //Generating token using login function and verifying the token
+
 const jwt = require("jsonwebtoken");
 
 const secretKey = "Ashu123";
