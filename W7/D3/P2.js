@@ -18,7 +18,6 @@ app.get("/file", function (req, res, next) {
 app.use(function (error, req, res, next) {
     res.status(404).json({
         success: false,
-        
         message: "File/folder does not exist. ",
         //originalmessage: error.message
     });
