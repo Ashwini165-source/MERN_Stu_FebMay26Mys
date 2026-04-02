@@ -128,3 +128,9 @@ app.get("/me", authenticateAccessToken, function (req, res) {
 app.listen(4000, function () {
     console.log("JWT demo server running at http://localhost:4000");
 });
+
+
+
+//curl -X POST http://localhost:4000/login -H "Content-Type:application/json" -d "{\"email\":\"email@email.com\",\"password\":\"pass@123\"}"
+//curl -X POST http://localhost:4000/refresh -H "Content-Type:application/json" -d "{\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMSwiZW1haWwiOiJlbWFpbEBlbWFpbC5jb20iLCJpYXQiOjE3NzUxMTQxMTUsImV4cCI6MTc3NTk3ODExNSwiaXNzIjoiand0LWV4YW1wbGUifQ.Vu-JqHGx4KKDPIIHNu034YWmuvYcHYCYASdP7eWsYkk\"}"
+//curl http://localhost:4000/me -H "Authorization:Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMSwiZW1haWwiOiJlbWFpbEBlbWFpbC5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzc1MTE0MzE0LCJleHAiOjE3NzUxMTUyMTQsImlzcyI6Imp3dC1leGFtcGxlIn0.gBir5eNpTsSrzZGkMFutbJEaKIEQ1L5r8KoIjoW_xYA"
