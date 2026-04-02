@@ -2,3 +2,12 @@
 const express = require('express');
 const app = express();
 
+app.get('/set-theme',function(req, res){
+    //res.cookie()tells the browser to store a cookie
+    res.cookie("theme","dark");
+
+    res.send("cookie named 'theme' with value 'dark' was sent to browser")
+});
+app.listen(4000, function () {
+    console.log("JWT demo server running at http://localhost:4000");
+});
