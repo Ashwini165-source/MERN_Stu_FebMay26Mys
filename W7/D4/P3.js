@@ -1,4 +1,4 @@
-//Secure cookies with httpOnly and secyreflags
+//Secure cookies with httpOnly and secretflags
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
