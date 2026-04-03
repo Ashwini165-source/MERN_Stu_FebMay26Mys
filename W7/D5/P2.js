@@ -8,11 +8,12 @@ const app = express()
 app.use(session({
     secret:"MySecret Key",
     resave:false,
-    saveUnitialized:false,
+    saveUninitialized:false,
     cookie:{
         maxAge:60*60*1000
     }
     }));
+
     app.get("/login",function(req,res){
         //afetr signin complete it give this details
          req.session.user = {
@@ -35,6 +36,7 @@ app.use(session({
             sessionUser: req.session.user
         });
     });
+
     app.listen(4000, function () {
     console.log("Express-session demo server running @ http://localhost:4000");
 });
