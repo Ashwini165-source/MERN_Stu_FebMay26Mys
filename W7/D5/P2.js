@@ -15,7 +15,7 @@ app.use(session({
     }));
 
     app.get("/login",function(req,res){
-        //afetr signin complete it give this details
+        //after signin complete it give this details
          req.session.user = {
             id:201,
             useraname:"Ashwini",
