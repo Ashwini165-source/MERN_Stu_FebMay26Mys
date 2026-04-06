@@ -106,4 +106,4 @@ module.exports = {
     clearCurrentBooking,
     processBooking,
     processBookingAsync
-}
+};
