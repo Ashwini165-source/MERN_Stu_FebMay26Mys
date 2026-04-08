@@ -5,5 +5,12 @@
     "movieTitle": "LoveMocktail3",
     "time": "10:00 AM",
     "seatCount": 2
+  },
+  {
+    "bookingId": "BOOK-1775664133659",
+    "movieId": 3,
+    "movieTitle": "Hayagreeva",
+    "time": "11:00 AM",
+    "seatCount": 3
   }
 ]
