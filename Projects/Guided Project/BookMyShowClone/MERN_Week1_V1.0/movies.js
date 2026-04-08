@@ -1,6 +1,5 @@
 // movies.js
 // This file stores the movie data used in the CLI App
-
 const movies = [
     {
         id:1,
