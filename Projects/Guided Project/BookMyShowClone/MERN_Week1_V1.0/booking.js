@@ -1,4 +1,5 @@
 // Handles booking related operations
+
 const bookingEmitter = require("./events");
 
 let currentBooking = null;
