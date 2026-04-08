@@ -1,4 +1,5 @@
 // User Login, profile fetch and logout of user functionality created
+
 const jwt = require("jsonwebtoken");
 const users = require("../data/users");
 
