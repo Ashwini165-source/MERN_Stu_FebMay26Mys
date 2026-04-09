@@ -49,8 +49,7 @@ function addMovie(req,res,next){
     const {title,language,genre,city,cinema,showtimes} = req.body;
 
     if(!title||!language||!genre||!city||!cinema||!showtimes){
-        return next(new CustomError("title,language,
-            genre,city,cinema,showtimes are required",404));
+        return next(new CustomError("title,language,genre,city,cinema,showtimes are required",404));
     }
 
     const newMovie = {
@@ -116,5 +115,5 @@ module.exports = {
     getMovieById,
     addMovie,
     updateMovie,
-    deletedMovie
+    deleteMovie
 };
