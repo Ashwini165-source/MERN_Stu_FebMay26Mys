@@ -36,7 +36,7 @@ function createBooking(req,res,next){
             userId: req.user.id,
             userName: req.user.name,
             movieId:movie.id,
-            movieTitle = movie.title,
+            movieTitle: movie.title,
             showtimeId:showtime.id,
             showtime: showtime.time,
             seatCount:Number(seatCount)
