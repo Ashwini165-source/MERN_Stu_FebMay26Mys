@@ -17,7 +17,7 @@ async function runCrudDemo(){
 
         //Create using save()
         const firstStudent = new Student({
-            name: "Rakesh",
+            name: "Ashwini",
             age: 20,
             role: "demo-student"
         });
