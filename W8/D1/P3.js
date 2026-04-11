@@ -1,5 +1,6 @@
 // Applied filters to the query using comparison operators
 // MERN_Stu_FebMay26Mys\W8\D1\P3.js
+
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
