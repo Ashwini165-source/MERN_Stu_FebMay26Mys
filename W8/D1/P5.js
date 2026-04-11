@@ -15,14 +15,14 @@ async function runAggregate(){
        
         // await Sale.deleteMany({status:"demo-sale"});
 
-        // await Sale.create([
-        //     {category:"books", amount: 200, status:"demo-sale"},
-        //     {category:"books", amount: 300, status:"demo-sale"},
-        //     {category:"books", amount: 400, status:"demo-sale"},
-        //     {category:"stationary", amount: 100, status:"demo-sale"},
+        //  await Sale.create([
+        //      {category:"books", amount: 200, status:"demo-sale"},
+        //      {category:"books", amount: 300, status:"demo-sale"},
+        //      {category:"books", amount: 400, status:"demo-sale"},
+        //      {category:"stationary", amount: 100, status:"demo-sale"},
         //     {category:"stationary", amount: 150, status:"demo-sale"},
-        //     {category:"stationary", amount: 450, status:"demo-sale"}
-        // ]);
+        //   {category:"stationary", amount: 450, status:"demo-sale"}
+        //  ]);
 
         const aggregationResult = await Sale.aggregate([
             // $match filters the incoming documents first
