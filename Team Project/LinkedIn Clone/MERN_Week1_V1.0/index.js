@@ -14,6 +14,20 @@ const {
   addExperience,
   addEducation
 } = require("./profile");
+const eventBus = require("./events");
+const {
+  sendRequest,
+  viewRequests,
+  respondRequest,
+  getConnections
+} = require("./connection");
+
+const {
+  createPost,
+  getFeed,
+  likePost,
+  commentPost
+} = require("./post");
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -29,6 +43,14 @@ function menu() {
   console.log("4. Edit Profile");
   console.log("5. View Other Profiles");
   console.log("6. Exit");
+  console.log("7. Send Connection Request");
+  console.log("8. View Requests");
+  console.log("9. Respond to Request");
+  console.log("10. View Connections");
+  console.log("11. Create Post");
+  console.log("12. View Feed");
+  console.log("13. Like Post");
+  console.log("14. Comment on Post");
 
   rl.question("Choose option: ", (choice) => {
     switch (choice) {
@@ -112,7 +134,7 @@ function menu() {
       // VIEW OTHER PROFILES
       case "5":
         const others = getOtherUsers();
-        
+
         if (others.length === 0) {
           console.log(chalk.red("No other users found"));
         } else {
@@ -127,6 +149,65 @@ function menu() {
       case "6":
         console.log("Goodbye!");
         rl.close();
+        break;
+      case "7":
+        const user7 = getCurrentUser();
+        rl.question("Enter User ID: ", (id) => {
+          sendRequest(user7, Number(id), getAllUsers())
+            .then(() => menu())
+            .catch(err => {
+              console.log(err);
+              menu();
+            });
+        });
+        break;
+      case "8":
+        const user8 = getCurrentUser();
+        console.log(viewRequests(user8));
+        menu();
+        break;
+      case "9":
+        const user9 = getCurrentUser();
+        rl.question("Sender ID: ", async (id) => {
+          rl.question("accept/reject: ", async (action) => {
+            await respondRequest(user9, Number(id), action);
+            menu();
+          });
+        });
+        break;
+      case "10":
+        const user10 = getCurrentUser();
+        console.log(getConnections(user10));
+        menu();
+        break;
+      case "11":
+        const user11 = getCurrentUser();
+        rl.question("Content: ", async (text) => {
+          await createPost(user11, text);
+          menu();
+        });
+        break;
+      case "12":
+        const user12 = getCurrentUser();
+        const connections = getConnections(user12);
+        console.log(getFeed(user12, connections));
+        menu();
+        break;
+      case "13":
+        const user13 = getCurrentUser();
+        rl.question("Post ID: ", (id) => {
+          likePost(user13, Number(id));
+          menu();
+        });
+        break;
+      case "14":
+        const user14 = getCurrentUser();
+        rl.question("Post ID: ", (id) => {
+          rl.question("Comment: ", (text) => {
+            commentPost(user14, Number(id), text);
+            menu();
+          });
+        });
         break;
 
       default:
