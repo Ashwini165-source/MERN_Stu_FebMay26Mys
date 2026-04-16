@@ -1,4 +1,4 @@
-//OTP gneration using crypto build in module of NodeJs
+//Generated and verified OTP
 const crypto = require("crypto");
 
 const otpStore = {};
