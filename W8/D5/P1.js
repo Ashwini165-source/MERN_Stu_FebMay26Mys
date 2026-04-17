@@ -1,4 +1,4 @@
-//Uploading image using dest approach and disk approach
+//File upload with Multer: with file type, file size restriction
 const express = require("express");
 const multer = require("multer");
 
