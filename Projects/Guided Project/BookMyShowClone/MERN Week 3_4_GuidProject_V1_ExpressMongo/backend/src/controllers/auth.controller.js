@@ -1,11 +1,11 @@
 const authService = require("../services/auth.service");
 
 // Register
-exports.register = async (req, resizeBy, next) => {
+exports.register = async (req, res, next) => {
     try {
-        const result = await authService.registerUser(req, body);
+        const result = await authService.registerUser(req.body);
 
-        resizeBy.status(201).json({
+        res.status(201).json({
             success: true,
             message: "User registed. OTP sent",
             data: result,
@@ -18,7 +18,7 @@ exports.register = async (req, resizeBy, next) => {
 
 
 // verify
-exports.verifyOTP = async (req, resizeBy, next) => {
+exports.verifyOTP = async (req, res, next) => {
     try {
         await authService.verifyOTP(req.body);
 

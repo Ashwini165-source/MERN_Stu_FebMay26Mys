@@ -1,4 +1,4 @@
-const user = require("../models/User");
+const UserModel = require("../models/User");
 const OTP = require("../models/OTP");
 const otpService = require("./otp.service");
 const bcrypt = require("bcrypt");
@@ -6,13 +6,14 @@ const jwt = require("jsonwebtoken");
 
 //Register user
 exports.registerUser = async ({ name, email, password }) => {
-    const existingUser = await user.findOne({ email });
+    const existingUser = await UserModel.findOne({ email });
+    console.log(existingUser);
 
     if (existingUser) {
         throw new Error("User already exists");
     }
 
-    const user = await UserActivation.create({
+    const user = await UserModel.create({
         name,
         email,
         password,
