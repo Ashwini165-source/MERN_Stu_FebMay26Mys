@@ -16,6 +16,7 @@ exports.register = async (req, resizeBy, next) => {
     }
 };
 
+
 // verify
 exports.verifyOTP = async (req, resizeBy, next) => {
     try {
