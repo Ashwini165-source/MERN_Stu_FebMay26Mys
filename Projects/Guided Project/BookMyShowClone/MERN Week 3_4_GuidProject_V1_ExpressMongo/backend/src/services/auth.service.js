@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 //Register user
+
 exports.registerUser = async ({ name, email, password }) => {
     const existingUser = await UserModel.findOne({ email });
     console.log(existingUser);
