@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bookingSchema = new mongoose.Schema({
     userId:{
-        type:mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:true,
         index:true,
@@ -9,6 +9,11 @@ const bookingSchema = new mongoose.Schema({
     showId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Show",
+        required:true,
+        index:true,
+    },
+    seats:{
+        type:[String],
         required:true,
     },
     totalSeats:{
@@ -29,9 +34,10 @@ const bookingSchema = new mongoose.Schema({
 {
     timestamps:true,
 });
-// Add validation 
-bookingSchema.pre("save",function(next){
-    if(this.seats.length === 0){
+
+//Add validation
+bookingSchema.pre("save",function (next) {
+    if (this.seats.length === 0) {
         return next(new Error("At least one seat must be selected"));
     }
     if(this.totalSeats!=this.seats.length){
@@ -42,4 +48,4 @@ bookingSchema.pre("save",function(next){
 //Compound index
 bookingSchema.index({userId:1,showId:1});
 
-module.exports=mongoose.model("Booking",bookingSchema);
+module.exports = mongoose.model("Booking",bookingSchema);

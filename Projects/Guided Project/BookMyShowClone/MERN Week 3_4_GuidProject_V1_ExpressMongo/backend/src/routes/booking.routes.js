@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const {protext} = require("../middleware/auth.middleware");
+const {protect} = require("../middleware/auth.middleware");
 
-//User booking route
+//user booking route
 router.post("/",protect,(req,res)=>{
     res.send("Create booking");
 });
+
+module.exports = router;

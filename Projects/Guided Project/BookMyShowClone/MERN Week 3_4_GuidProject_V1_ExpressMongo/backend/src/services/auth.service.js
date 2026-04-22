@@ -1,75 +1,78 @@
-const UserModel = require("../models/User");
+const  User = require("../models/User");
 const OTP = require("../models/OTP");
 const otpService = require("./otp.service");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 //Register user
+exports.registerUser = async({name,email,password})=>{
+    const existingUser = await User.findOne({email});
 
-exports.registerUser = async ({ name, email, password }) => {
-    const existingUser = await UserModel.findOne({ email });
-    console.log(existingUser);
-
-    if (existingUser) {
+    if(existingUser){
         throw new Error("User already exists");
     }
-
-    const user = await UserModel.create({
+    const user = await User.create({
         name,
         email,
         password,
     });
 
-    await otpService.generateOTP(email);
+    const otpData = await otpService.generateOTP(email);
+    console.log("otpData : ",otpData);
+    
 
-    return { email: user.email };
+    return {email:user.email};
+
+
 };
 
-//Verify OTP
-exports.verifyOTP = async ({ email, otp }) => {
-    const record = await OTP.findOne({ email }).select("+otp");
+//verify otp
+exports.verifyOTP = async({email,otp})=>{
+    console.log(email,otp);
+    
+    const record = await OTP.findOne({email}).select("+otp");
 
-    if (!record) {
+    if(!record){
         throw new Error("OTP expired or not found");
     }
 
-    const isMatch = await bcrypt.compare(otp, record, otp);
-
-    if (!isMatch) {
-        record.attempts += 1;
+    const isMatch = await bcrypt.compare(otp,record.otp);
+    console.log("isMatch : ",isMatch);
+    
+    if(!isMatch){
+        record.attempts +=1;
         await record.save();
         throw new Error("Invalid OTP");
     }
-
-    await User.updateOne({ email }, { isVerified: true });
+    await User.updateOne({email},{isVerified:true});
     return true;
 };
+//login
+exports.loginUser = async ({email,password})=>{
+    const user = await User.findOne({email}).select("+password");
 
-//Login 
-exports.loginUser = async ({ email, password }) => {
-    const user = await User.findOne({ email }).select("+password");
-
-    if (!user) {
+    if(!user){
         throw new Error("User not found");
     }
-    if (!user.isVerified) {
+    if(!user.isVerified){
         throw new Error("User not verified");
+
     }
     const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
+
+    if(!isMatch){
         throw new Error("Invalid credentials");
     }
     const token = jwt.sign(
-        { id: user._id, role: user.role },
+        {id:user._id,role:user.role},
         process.env.JWT_SECRET,
-        { expiresIn: "1d" }
+        {expiresIn:"1d"}
     );
-
-    return {
+    return{
         token,
-        user: {
-            id: user._id,
-            role: user.role,
-        },
-    };
-};
+        user:{
+            id:user._id,
+            role:user.role
+        }
+    }
+    }

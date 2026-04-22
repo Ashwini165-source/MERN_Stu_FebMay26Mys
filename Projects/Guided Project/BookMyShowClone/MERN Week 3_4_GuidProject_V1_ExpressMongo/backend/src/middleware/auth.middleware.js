@@ -1,42 +1,42 @@
 const jwt = require("jsonwebtoken");
 const user = require("../models/User");
 
-//Auth middleware
+//Auth middleware 
 exports.protect = async(req,res,next)=>{
     try{
         let token;
         if(
-            req.headers.authorization && 
-            req.headers.authorization.startsWith("Bearer")
+            req.headers.authorization && req.headers.authorization.startsWith("Bearer")
         ){
-            token = req.authorization.split(" ")[1];
+            token = req.headers.authorization.split(" ")[1];
         }
         if(!token){
             return res.status(401).json({
                 success:false,
-                message:"Not authorized, token missing",
+                message:"Not authorized,token missing",
             });
         }
-        //Verify token
+        //verify token
         const decoded = jwt.verify(token,process.env.JWT_SECRET);
 
-        //Get user from DB
+        //get user from DB
         const user = await User.findById(decoded.id);
 
         if(!user){
-           return res.status(404).json({
+             return res.status(404).json({
                 success:false,
                 message:"User not found",
-            }); 
+            });
+        
         }
         //Attach user to request
         req.user = user;
         next();
     }
     catch(error){
-        return res.status(401).json({
+         return res.status(401).json({
                 success:false,
                 message:"Invalid or expired token",
             });
     }
-}
+};
