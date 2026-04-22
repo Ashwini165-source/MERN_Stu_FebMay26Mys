@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const user = require("../modela/User");
+const user = require("../models/User");
 
 //Auth middleware
 exports.protect = async(req,res,next)=>{
