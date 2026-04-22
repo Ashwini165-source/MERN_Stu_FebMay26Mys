@@ -1,29 +1,29 @@
 const movieService = require("../services/movie.service");
 
-//Create movie
+//Create Movie
 exports.createMovie = async(req,res,next)=>{
     try{
         const movie = await movieService.createMovie(req.body);
 
         res.status(201).json({
             success:true,
-            message:"Movie created successfully",
-            data:movie,
+            message:"Movie created successfuly",
+            data:movie
         });
     }
     catch(error){
         next(error);
     }
 };
-//Get movies
+//Get Movies
 exports.getMovies = async(req,res,next)=>{
     try{
-        const movie = await movieService.getMovies(req.body);
+        const result = await movieService.getMovies(req.query);
 
         res.status(200).json({
             success:true,
             message:"Movie List fetched",
-            data:result,
+            data:result
         });
     }
     catch(error){
@@ -31,34 +31,36 @@ exports.getMovies = async(req,res,next)=>{
     }
 };
 
-//Update movie
 exports.updateMovie = async(req,res,next)=>{
     try{
         const movie = await movieService.updateMovie(
             req.params.id,
             req.body
         );
+
         res.status(200).json({
             success:true,
-            message:"Movie Updated successfully",
-            data:movie,
+            message:"Movie updated successfuly",
+            data:movie
         });
     }
     catch(error){
         next(error);
     }
 };
-//Delete movie
+
 exports.deleteMovie = async(req,res,next)=>{
     try{
-       await movieService.deleteMovie(req.params.id);
+        await movieService.deleteMovie(req.params.id);
 
-        res.status(201).json({
+        res.status(200).json({
             success:true,
-            message:"Movie deleted successfully",
+            message:"Movie deleted successfuly"
         });
     }
     catch(error){
         next(error);
     }
+
+    
 };
