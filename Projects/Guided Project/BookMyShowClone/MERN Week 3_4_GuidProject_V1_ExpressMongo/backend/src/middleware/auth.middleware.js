@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const user = require("../models/User");
+const User = require("../models/User");
 
 //Auth middleware 
 exports.protect = async(req,res,next)=>{
@@ -34,6 +34,8 @@ exports.protect = async(req,res,next)=>{
         next();
     }
     catch(error){
+        console.log(error);
+        
          return res.status(401).json({
                 success:false,
                 message:"Invalid or expired token",

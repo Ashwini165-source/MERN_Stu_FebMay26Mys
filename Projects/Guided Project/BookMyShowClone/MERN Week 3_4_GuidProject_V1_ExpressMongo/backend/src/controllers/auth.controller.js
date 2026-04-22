@@ -9,8 +9,6 @@ exports.register = async(req,res,next)=>{
             message:"User registered OTP sent.",
             data:result,
         });
-        
-        
     }
     catch(error){
         next(error);
