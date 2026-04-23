@@ -10,6 +10,7 @@ app.use("/api/auth",authRoutes);
 app.use("/api/movies",movieRoutes);
 app.use("/api/bookings",bookingRoutes);
 app.use("/api/shows",showRoutes);
+
 //Base URL 
 app.get("/",(req,res)=>{
     res.status(200).json({
