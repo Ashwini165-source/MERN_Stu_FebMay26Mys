@@ -1,7 +1,10 @@
+const logger = require("../utils/logger"); 
+
 module.exports = (err, req, res, next) => { 
 console.error("ERROR:", err.message); 
 let statusCode = err.statusCode || 500; 
-let message = err.message || "Internal Server Error"; 
+let message = logger.error(err.message)|| "Internal Server Error"; 
+//err.message || "Internal Server Error"; 
 // Mongoose Validation Error 
 if (err.name === "ValidationError") { 
 message = Object.values(err.errors) 
