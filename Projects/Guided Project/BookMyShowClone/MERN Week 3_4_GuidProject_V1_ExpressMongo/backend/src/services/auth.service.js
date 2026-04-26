@@ -1,8 +1,8 @@
-const  User = require("../models/User");
-const OTP = require("../models/OTP");
-const otpService = require("./otp.service");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const User = require("../models/User"); 
+const OTP = require("../models/OTP"); 
+const otpService = require("./otp.service"); 
+const bcrypt = require("bcrypt"); 
+const jwt = require("jsonwebtoken"); 
 
 //Register user
 exports.registerUser = async({name,email,password})=>{
