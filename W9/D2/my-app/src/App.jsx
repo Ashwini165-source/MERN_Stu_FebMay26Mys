@@ -6,7 +6,6 @@ import { ClassComponentsBasics } from "./components/ClassComponentsBasics.jsx"
 import { FunctionalComp } from "./components/FunctionalComponentsAdv.jsx"
 function App() {
  
-
   return (
     //Fragment in react : <> </>
     <>
