@@ -1,5 +1,5 @@
 import { useState } from "react";
-//useState Basics
+//UseState Basics
 //Its a react hook that adds state to functional component
 //Returns an array with 2 values
 //1. Current state value
