@@ -1,16 +1,18 @@
 import './App.css'
-import { UseStateBasics } from "./components/P1"
-import { UpdatingObjectsAndArraysState } from './components/P2'
-import {EventHandlingState} from './components/P3'
-import {DerivedStateCondRender} from './components/P4'
+import { UseContextIntro } from "./components/P1";
+import { CustomHooksIntro} from "./components/P2";
+import { UserRefIntro} from "./components/P3";
+import { UseReducerIntro } from "./components/P4";
+import { UseCallbackIntro } from "./components/P5";
 
 function App() {
   return (
     <>
-      {/* <UseStateBasics /> */}
-      {/* <UpdatingObjectsAndArraysState /> */}
-      {/* <EventHandlingState /> */}
-      <DerivedStateCondRender />
+      {/* <UseContextIntro />        */}
+      {/* <CustomHooksIntro /> */}
+      {/* <UserRefIntro /> */}
+      {/* <UseReducerIntro /> */}
+      <UseCallbackIntro />
     </>
   )
 }
