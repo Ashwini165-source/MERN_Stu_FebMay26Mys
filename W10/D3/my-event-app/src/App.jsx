@@ -18,8 +18,8 @@ function App() {
       {/* <UseCallbackEvents/> */}
       {/* <EventDelegation/> */}
       {/* <FormsPattern/> */}
-      <KeyboardEvent/>
-      {/* <EventObj/> */}
+      {/* <KeyboardEvent/> */}
+      <EventObj/>
       {/* <Accessibility/> */}
     </>
   )
