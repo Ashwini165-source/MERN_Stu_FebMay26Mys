@@ -16,7 +16,7 @@ function App() {
       {/* <EventObject/> */}
       {/* <PassingArguments/> */}
       {/* <UseCallbackEvents/> */}
-      {/* <EventDelegation/> */}
+      <EventDelegation/>
       {/* <FormsPattern/> */}
       {/* <KeyboardEvent/> */}
       {/* <EventObj/> */}
