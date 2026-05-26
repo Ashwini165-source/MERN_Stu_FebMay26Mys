@@ -17,13 +17,13 @@ export function LoginFlow() {
     {
       email: "admin@r.com",
       password: "admin123",
-      name: "Rakesh",
+      name: "Ashwini",
       role: "admin",
     },
     {
       email: "user@r.com",
       password: "user123",
-      name: "Sandesh",
+      name: "Ashu",
       role: "user",
     },
   ];
