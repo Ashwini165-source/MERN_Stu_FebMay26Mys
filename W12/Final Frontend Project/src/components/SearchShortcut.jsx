@@ -1,16 +1,16 @@
-export default function SearchShortcut(params){
-    function handleKeyDown(){
-        if(event.key==="Enter"){
+export default function SearchShortcut(params) {
+    function handleKeyDown() {
+        if (event.key === "Enter") {
             alert("Search Initiated");
         }
-if(event.key==="Escape"){
+        if (event.key === "Escape") {
             alert("Search Cleared");
         }
     }
-    return(
+    return (
         <section>
             <h2>Keyboard Search</h2>
-            <input type="text" placeholder="Press Enter" onKeyDown={handleKeyDown}/>
+            <input type="text" placeholder="Press Enter" onKeyDown={handleKeyDown} />
         </section>
     );
 }
