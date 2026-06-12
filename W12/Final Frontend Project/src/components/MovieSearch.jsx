@@ -5,6 +5,7 @@ export default function MovieSearch(){
         <section>
             <h3>Search Movies</h3>
             <input type="text" value={search} placeholder="Search movie..."
+            //Event object
              onChange={(event)=>{
                 setSearch(event.target.value);
              }}
