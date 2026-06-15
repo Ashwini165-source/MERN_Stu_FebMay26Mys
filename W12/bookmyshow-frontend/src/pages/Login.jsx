@@ -79,7 +79,12 @@ Context manages authentication state.
 import { useState } from "react";
 
 
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+
 
 
 import { loginUser } from "../api/authApi";
@@ -90,6 +95,7 @@ import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
 
 
   const { login } = useAuth();
@@ -200,11 +206,21 @@ export default function Login() {
       */
 
 
-      if (user.role === "admin") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/");
-      }
+      const from =
+  location.state?.from?.pathname;
+
+if (user.role === "admin") {
+  navigate(
+    from || "/admin/dashboard",
+    { replace: true }
+  );
+} else {
+  navigate(
+    from || "/",
+    { replace: true }
+  );
+}
+
     } catch (error) {
       setError(
         error.message || error.response?.data?.message || "Login failed.",
