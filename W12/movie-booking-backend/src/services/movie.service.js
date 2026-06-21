@@ -78,6 +78,27 @@ exports.getMovies = async (query) => {
 
 /*
 -----------------------------------------
+GET MOVIE BY ID
+-----------------------------------------
+*/
+exports.getMovieById = async (id) => {
+  const movie = await Movie.findOne({
+    _id: id,
+    isActive: true,
+  });
+
+
+  if (!movie) {
+    throw new CustomError("Movie not found", 404);
+  }
+
+
+  return movie;
+};
+
+
+/*
+-----------------------------------------
 UPDATE MOVIE
 -----------------------------------------
 */
