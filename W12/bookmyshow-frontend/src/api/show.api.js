@@ -44,3 +44,21 @@ export async function getShows(filters = {}) {
 }
 
 
+/*
+=========================================================
+GET SHOW BY ID
+
+
+GET /api/shows/:id
+=========================================================
+*/
+
+
+export async function getShowById(showId) {
+  const response = await api.get(
+    `/shows/${showId}`,
+  );
+
+
+  return response.data;
+}
