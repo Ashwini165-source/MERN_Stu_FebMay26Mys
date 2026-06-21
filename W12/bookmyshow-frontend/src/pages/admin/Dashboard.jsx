@@ -51,84 +51,94 @@ Charts & Insights
 */
 
 
-const dashboardStats = [
-    {
-        id: 1,
-        title: "Movies",
-        value: 12,
-        description: "Movies currently available",
-    },
+import { useEffect, useState } from "react";
 
 
-    {
-        id: 2,
-        title: "Shows",
-        value: 48,
-        description: "Active show schedules",
-    },
-
-
-    {
-        id: 3,
-        title: "Bookings",
-        value: 356,
-        description: "Total bookings made",
-    },
-];
+import { getDashboardStats } from "../../api/admin.api";
 
 
 export default function Dashboard() {
-    return (
-        <section>
-            <header>
-                <h1>Admin Dashboard</h1>
+  const [stats, setStats] = useState(null);
 
 
-                <p>Welcome back. Here's a quick overview of the platform.</p>
-            </header>
+  const [loading, setLoading] = useState(true);
 
 
-            {/* Dashboard Statistics */}
+  const [error, setError] = useState("");
 
 
-            <section style={styles.grid}>
-                {dashboardStats.map((stat) => (
-                    <StatCard key={stat.id} stat={stat} />
-                ))}
-            </section>
+  useEffect(() => {
+    async function loadDashboard() {
+      try {
+        const response = await getDashboardStats();
 
 
-            {/* Future Analytics Area */}
+        setStats(response.data);
+      } catch (error) {
+        setError(error.response?.data?.message || "Failed to load dashboard");
+      } finally {
+        setLoading(false);
+      }
+    }
 
 
-            <section style={styles.analytics}>
-                <h2>Upcoming Analytics</h2>
+    loadDashboard();
+  }, []);
 
 
-                <p>Sprint 7 will introduce:</p>
+  if (loading) {
+    return <p>Loading dashboard...</p>;
+  }
 
 
-                <ul>
-                    <li>Most booked movies</li>
+  if (error) {
+    return <p style={styles.error}>{error}</p>;
+  }
 
 
-                    <li>Booking trends</li>
+  const dashboardStats = [
+    {
+      title: "Movies",
+      value: stats.totalMovies,
+      description: "Movies currently available",
+    },
 
 
-                    <li>Occupancy insights</li>
+    {
+      title: "Shows",
+      value: stats.totalShows,
+      description: "Active show schedules",
+    },
 
 
-                    <li>Revenue reports</li>
-                </ul>
-            </section>
-        </section>
-    );
-}
+    {
+      title: "Bookings",
+      value: stats.totalBookings,
+      description: "Total bookings made",
+    },
 
 
-function StatCard({ stat }) {
-    return (
-        <article style={styles.card}>
+    {
+      title: "Users",
+      value: stats.totalUsers,
+      description: "Registered users",
+    },
+  ];
+
+
+  return (
+    <section>
+      <header>
+        <h1>Admin Dashboard</h1>
+
+
+        <p>Welcome back. Here's a quick overview of the platform.</p>
+      </header>
+
+
+      <section style={styles.grid}>
+        {dashboardStats.map((stat) => (
+          <article key={stat.title} style={styles.card}>
             <h3>{stat.title}</h3>
 
 
@@ -136,112 +146,44 @@ function StatCard({ stat }) {
 
 
             <p>{stat.description}</p>
-        </article>
-    );
+          </article>
+        ))}
+      </section>
+    </section>
+  );
 }
 
 
 const styles = {
-    grid: {
-        marginTop: "30px",
+  grid: {
+    marginTop: "30px",
 
 
-        display: "grid",
+    display: "grid",
 
 
-        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
 
 
-        gap: "20px",
-    },
+    gap: "20px",
+  },
 
 
-    card: {
-        background: "#fff",
+  card: {
+    background: "#fff",
 
 
-        border: "1px solid #ddd",
+    border: "1px solid #ddd",
 
 
-        borderRadius: "8px",
+    borderRadius: "8px",
 
 
-        padding: "25px",
-    },
+    padding: "25px",
+  },
 
 
-    analytics: {
-        marginTop: "40px",
-
-
-        background: "#fff",
-
-
-        border: "1px solid #ddd",
-
-
-        borderRadius: "8px",
-
-
-        padding: "25px",
-    },
+  error: {
+    color: "red",
+  },
 };
-
-
-/*
-=========================================================
-FLOW
-
-
-Admin Login
-↓
-Dashboard
-↓
-Overview Statistics
-↓
-Future Analytics
-
-
-=========================================================
-
-
-KEY TAKEAWAYS
-
-
-1. Dashboards summarize important data.
-
-
-2. map() is useful beyond lists.
-
-
-3. Static dashboards evolve naturally
-   into analytics-driven dashboards.
-
-
-4. Sprint 7 enhances this page
-   rather than replacing it.
-
-
-=========================================================
-
-
-VERIFICATION
-
-
-✓ Dashboard loads successfully
-
-
-✓ Statistics render correctly
-
-
-✓ Responsive layout works
-
-
-✓ No console errors
-
-
-✓ Sprint 7 ready
-
-
-=========================================================
-*/
