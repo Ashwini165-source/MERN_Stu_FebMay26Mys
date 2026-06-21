@@ -155,6 +155,8 @@ const MovieManagement = lazy(() => import("../pages/admin/MovieManagement"));
 
 const MovieDetails = lazy(() => import("../pages/MovieDetails"));
 
+const MyBookings = lazy(() => import("../pages/MyBookings"));
+
 
 /*
 =========================================================
@@ -270,6 +272,16 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/my-bookings"
+          element={
+            <ProtectedRoute>
+              <MyBookings />
+            </ProtectedRoute>
+          }
+        />
+
 
 
         {/*

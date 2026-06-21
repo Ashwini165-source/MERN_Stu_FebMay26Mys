@@ -47,5 +47,3 @@ export async function cancelBooking(bookingId) {
 
   return response.data;
 }
-
-

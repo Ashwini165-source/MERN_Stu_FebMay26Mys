@@ -158,7 +158,7 @@ export default function Bookings() {
       alert("Booking created successfully!");
 
 
-      navigate("/bookings");
+      navigate("/my-bookings");
     } catch (error) {
       setError(error.response?.data?.message || "Booking failed");
     } finally {
